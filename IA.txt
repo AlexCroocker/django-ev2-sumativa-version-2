@@ -1,0 +1,1 @@
+- se uso IA para formatear los montos costos a pesos chilenos. cosa que ahora si se ve

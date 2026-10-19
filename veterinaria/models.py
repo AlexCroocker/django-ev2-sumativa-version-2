@@ -11,6 +11,9 @@ class Cliente(models.Model):
     def __str__(self):
         return f"{self.nombre} {self.rut}"
 
+    def formato_clp(self):
+        return f"${self.monto_costo:,.0f}".replace(",", ".")
+
 class Atencion(models.Model):
     id_atencion = models.AutoField(primary_key=True)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
@@ -21,3 +24,6 @@ class Atencion(models.Model):
 
     def __str__(self):
         return f"Atención {self.id_atencion} - Cliente: {self.cliente.nombre}"
+
+    def formato_clp(self):
+        return f"${self.monto_costo:,.0f}".replace(",", ".")
